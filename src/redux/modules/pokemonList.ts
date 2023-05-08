@@ -1,16 +1,16 @@
 import { call, delay, put, takeEvery, takeLatest } from "redux-saga/effects";
 import { getPokemonList,loadMorePokemonList } from "../../api/pokemonEndpoints";
 
-const FETCH_POKEMON_LIST = "pokemon-frontend/pokemon/FETCH_POKEMON_LIST";
+const FETCH_POKEMON_LIST = "FETCH_POKEMON_LIST";
 const FETCH_POKEMON_LIST_SUCCESS =
-  "pokemon-frontend/pokemon/FETCH_POKEMON_LIST_SUCCESS";
+  "FETCH_POKEMON_LIST_SUCCESS";
 const FETCH_POKEMON_LIST_FAILURE =
-  "pokemon-frontend/pokemon/FETCH_POKEMON_LIST_FAILURE";
-const LOAD_MORE_POKEMON = "pokemon-frontend/pokemon/LOAD_MORE_POKEMON";
+  "FETCH_POKEMON_LIST_SUCCESS";
+const LOAD_MORE_POKEMON = "FETCH_POKEMON_LIST_FAILURE";
 const LOAD_MORE_POKEMON_SUCCEED =
-  "pokemon-frontend/pokemon/LOAD_MORE_POKEMON_SUCCEED";
+  "LOAD_MORE_POKEMON_SUCCEED";
 const LOAD_MORE_POKEMON_FAILED =
-  "pokemon-frontend/pokemon/LOAD_MORE_POKEMON_FAILED";
+  "LOAD_MORE_POKEMON_FAILED";
 
 
   export interface State {

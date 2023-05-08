@@ -135,14 +135,8 @@ function* fetchPokemon(action: FetchPokemonRequestAction) :Generator {
     const pokeId=Number(action.payload)
     console.log('calledid ',pokeId)
     const response :any= yield call(getPokemonInfo,pokeId);
-    const name = response.data.name;
-    const id = response.data.id;
     const  url= response.data.sprites.front_default;
-    console.log('mu omg',response.data)
-    const weight=response.data.weight;
-    const height=response.data.height
-    const order= response.data.order;
-    const abilities=response.data.abilities
+    const {name,id,weight,height,order,abilities}=response.data
     yield put({
       type: FETCH_POKEMON_SUCCESS,
       payload: {

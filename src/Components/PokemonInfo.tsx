@@ -4,6 +4,7 @@ import style from 'styled-jsx/style'
 import { makeStyles } from "@mui/styles";
 import { useSelector,useDispatch } from 'react-redux';
 import { PokemonState, resetModal } from '../redux/modules/pokemonModal';
+import ModalSkeleton from './ModalSekeleton';
   const useStyles = makeStyles({
     cardContainer: {
       display: "flex",
@@ -62,7 +63,9 @@ const PokemonInfo = () => {
             borderRadius:'16px',
             boxShadow: 24,
             p: 4,
-          }}>
+          }}>{
+            pokemonInfo.isLoading ?? (<ModalSkeleton/>)
+          }
             <Typography className={classes.pokemonName} variant="h6" component="h2">
               {pokemonInfo?.name}
             </Typography>
