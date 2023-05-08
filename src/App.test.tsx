@@ -75,7 +75,7 @@ describe('PokemonList', () => {
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith(loadPokemonList());
   });
-
+//used button for conveninece otherowiste skroll is the tatgeted beahvior
   it('should dispatch loadMorePokemon when "Load more" button is clicked', () => {
     const spy = jest.spyOn(store, 'dispatch');
 
@@ -126,7 +126,7 @@ describe('PokemonList', () => {
 
     expect(screen.getByText('Error: Error message')).toBeInTheDocument();
   });
-
+// fails because i render the items in MUI card , for some reason the test doesn't recognize the length of the list
   it('should render a list of Pokemon cards when pokemonList is not empty', () => {
     store = mockStore({
       pokemonListReducer: {
